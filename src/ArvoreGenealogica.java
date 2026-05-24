@@ -123,11 +123,11 @@ public class ArvoreGenealogica {
 
                 // Cria a indentação de acordo com o nível
                 for (int i = 0; i < nivel; i++) {
-                        System.out.print("    ");
+                        System.out.print("│   ");
                 }
 
                 // Mostra o nome da pessoa (nó atual)
-                System.out.println(node.getUserObject());
+                System.out.println("└── " + node.getUserObject());
 
                 // Pega os filhos do nó atual
                 Enumeration<?> filhos = node.children();
