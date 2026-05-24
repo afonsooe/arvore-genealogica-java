@@ -1,4 +1,3 @@
-
 /*
  * Atividade Prática — Árvore Genealógica
  * Pessoa escolhida: Dom Pedro II
@@ -11,7 +10,6 @@
  * - Silvio Aparecido Rêgo Silva
  */
 
-import java.util.Enumeration;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 public class ArvoreGenealogica {
@@ -21,7 +19,10 @@ public class ArvoreGenealogica {
                 // Criação da raiz da árvore (pessoa principal)
                 DefaultMutableTreeNode raiz = new DefaultMutableTreeNode("Dom Pedro II");
 
-                // Criando os pais (nível 2)
+                // =========================
+                // NÍVEL 2 — Pais
+                // =========================
+
                 DefaultMutableTreeNode pai = new DefaultMutableTreeNode("Dom Pedro I");
 
                 DefaultMutableTreeNode mae = new DefaultMutableTreeNode("Maria Leopoldina");
@@ -29,6 +30,10 @@ public class ArvoreGenealogica {
                 // Ligando os pais à raiz
                 raiz.add(pai);
                 raiz.add(mae);
+
+                // =========================
+                // NÍVEL 3 — Avós
+                // =========================
 
                 // Avós paternos
                 DefaultMutableTreeNode avoP1 = new DefaultMutableTreeNode("Dom João VI");
@@ -47,7 +52,10 @@ public class ArvoreGenealogica {
                 mae.add(avoM1);
                 mae.add(avoM2);
 
-                // Bisavós (nível 4)
+                // =========================
+                // NÍVEL 4 — Bisavós
+                // =========================
+
                 DefaultMutableTreeNode bis1 = new DefaultMutableTreeNode("Pedro III de Portugal");
 
                 DefaultMutableTreeNode bis2 = new DefaultMutableTreeNode("Maria I de Portugal");
@@ -76,8 +84,9 @@ public class ArvoreGenealogica {
                 avoM2.add(bis7);
                 avoM2.add(bis8);
 
-                // Trisavós (nível 5)
-                // Aqui optei por já adicionar direto sem criar variável separada
+                // =========================
+                // NÍVEL 5 — Trisavós
+                // =========================
 
                 bis1.add(new DefaultMutableTreeNode("João V de Portugal"));
                 bis1.add(new DefaultMutableTreeNode("Maria Ana da Áustria"));
@@ -94,10 +103,10 @@ public class ArvoreGenealogica {
                 bis5.add(new DefaultMutableTreeNode("Francisco I do Sacro Império"));
                 bis5.add(new DefaultMutableTreeNode("Maria Teresa da Áustria"));
 
-                // Carlos III e Maria Amália aparecem 3 vezes pois são
-                // antepassados comuns de vários ramos desta família real
+                // Carlos III e Maria Amália aparecem mais de uma vez
+                // pois são ancestrais comuns em diferentes ramos familiares
 
-                bis6.add(new DefaultMutableTreeNode("Carlos III da Espanha")); // mesmo ancestral de bis3
+                bis6.add(new DefaultMutableTreeNode("Carlos III da Espanha"));
                 bis6.add(new DefaultMutableTreeNode("Maria Amália da Saxônia"));
 
                 bis7.add(new DefaultMutableTreeNode("Carlos III da Espanha"));
@@ -106,45 +115,16 @@ public class ArvoreGenealogica {
                 bis8.add(new DefaultMutableTreeNode("Francisco I do Sacro Império"));
                 bis8.add(new DefaultMutableTreeNode("Maria Teresa da Áustria"));
 
+                // =========================
+                // Impressão da árvore
+                // =========================
+
                 System.out.println("=================================");
                 System.out.println("      ÁRVORE GENEALÓGICA");
                 System.out.println("          Dom Pedro II");
                 System.out.println("=================================\n");
 
-                // Chamada do método que imprime a árvore
-                imprimirArvore(raiz, 0);
-
-                // Chamada do método que imprime a árvore
-                imprimirArvore(raiz, 0);
-        }
-
-        // Método recursivo para percorrer e imprimir a árvore
-        // CASO BASE: se o nó não tiver filhos, o while não executa
-        // e a recursão termina naturalmente para esse ramo.
-        // CASO RECURSIVO: para cada filho, chama o próprio método
-        // com nivel + 1, aprofundando a impressão hierárquica.
-        public static void imprimirArvore(
-                        DefaultMutableTreeNode node,
-                        int nivel) {
-
-                // Cria a indentação de acordo com o nível
-                for (int i = 0; i < nivel; i++) {
-                        System.out.print("│   ");
-                }
-
-                // Mostra o nome da pessoa (nó atual)
-                System.out.println("└── " + node.getUserObject());
-
-                // Pega os filhos do nó atual
-                Enumeration<?> filhos = node.children();
-
-                // Percorre todos os filhos
-                while (filhos.hasMoreElements()) {
-
-                        DefaultMutableTreeNode filho = (DefaultMutableTreeNode) filhos.nextElement();
-
-                        // Chamada recursiva para imprimir os filhos
-                        imprimirArvore(filho, nivel + 1);
-                }
+                // Chamada do método da outra classe
+                MetodosArvore.imprimirArvore(raiz, 0);
         }
 }
