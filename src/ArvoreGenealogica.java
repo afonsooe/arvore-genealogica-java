@@ -113,9 +113,6 @@ public class ArvoreGenealogica {
 
                 // Chamada do método que imprime a árvore
                 imprimirArvore(raiz, 0);
-
-                // Chamada do método que imprime a árvore
-                imprimirArvore(raiz, 0);
         }
 
         // Método recursivo para percorrer e imprimir a árvore
