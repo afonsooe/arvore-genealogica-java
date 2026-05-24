@@ -106,7 +106,13 @@ public class ArvoreGenealogica {
                 bis8.add(new DefaultMutableTreeNode("Francisco I do Sacro Império"));
                 bis8.add(new DefaultMutableTreeNode("Maria Teresa da Áustria"));
 
-                System.out.println("=== Árvore Genealógica ===\n");
+                System.out.println("=================================");
+                System.out.println("      ÁRVORE GENEALÓGICA");
+                System.out.println("          Dom Pedro II");
+                System.out.println("=================================\n");
+
+                // Chamada do método que imprime a árvore
+                imprimirArvore(raiz, 0);
 
                 // Chamada do método que imprime a árvore
                 imprimirArvore(raiz, 0);
