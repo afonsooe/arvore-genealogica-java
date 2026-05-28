@@ -62,18 +62,6 @@ O método `imprimirArvore` percorre a árvore de forma recursiva, imprimindo cad
 
 ---
 
-## Em casos em que um ancestral não foi encontrado, como isso foi representado no código?
-
-Neste trabalho não foi necessário utilizar ancestrais desconhecidos, pois foi possível encontrar informações históricas suficientes para completar os cinco níveis exigidos da árvore genealógica.
-
----
-
-## Qual foi a maior dificuldade ao implementar esta atividade?
-
-A maior dificuldade foi compreender a lógica da recursividade e organizar corretamente as ligações entre os nós da árvore, garantindo que cada ancestral fosse conectado ao nível correto da estrutura genealógica.
-
----
-
 ## Como executar
 
 Clone o repositório:
