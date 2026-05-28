@@ -61,8 +61,3 @@ Todos os níveis foram preenchidos com dados históricos reais.
 O método `imprimirArvore` percorre a árvore de forma recursiva, imprimindo cada nó com indentação proporcional ao seu nível hierárquico.
 
 ---
-
-## Como executar
-
-Clone o repositório:
-   git clone https://github.com/SEU-USUARIO/arvore-genealogica-java.git
